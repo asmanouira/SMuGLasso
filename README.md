@@ -15,11 +15,11 @@ We extend its usage to multi-task group lasso, sparse multi-task group lasso in 
 ---
 
 ## **Features**
-- Preprocess genotype datasets into a format suitable for SMuGLasso using ```input_generator.py```.
+- Preprocess genotype datasets into a format suitable for SMuGLasso.
 - Cluster SNPs into LD groups using R-based **adjclust** library.
-- Merge LD groups across populations using ```merge_shared_groups.py```.
-- Perform stability selection on MuGLasso or/and SMuGLasso using ```multitask_stability_selection.py```.
-- Evaluate the stability of the selection using ```compute_stability_index.py```.
+- Merge LD groups across populations.
+- Perform stability selection on MuGLasso or/and SMuGLasso.
+- Evaluate the stability of the selection.
 ---
 
 ## **Installation**
