@@ -1,6 +1,6 @@
 # **MuGLasso and SMuGLasso Stability Analysis**
 
-This repository contains an end-to-end pipeline for applying **Multi-task Group Lasso (MuGLasso)** and **Sparse Multi-task Group Lasso (SMuGLasso)** to analyze stability in genomic datasets. It includes scripts for preprocessing genotype data, clustering SNPs into LD groups, and evaluating feature stability using bootstrap resampling.
+This repository contains an end-to-end pipeline for applying **Multi-task Group Lasso (MuGLasso)** and **Sparse Multi-task Group Lasso (SMuGLasso)** to analyze stability in GWAS datasets. It includes scripts for preprocessing genotype data, clustering SNPs into LD groups, and evaluating feature stability using bootstrap resampling.
 
 
 
@@ -8,33 +8,33 @@ This repository contains an end-to-end pipeline for applying **Multi-task Group 
 
 ## **Overview**
 This repository is an implementation of MuGLasso and SMuGLasso applied to GWAS
-This project utilizes techniques inspired by the \*\*Gap Safe Screening\*\* package, which can be found here: - \[Gap Safe Screening Rules]\(https://github.com/EugeneNdiaye/Gap\_Safe\_Rules).
+This project utilizes techniques inspired by the **Gap Safe Screening** package, which can be found [here](https://github.com/EugeneNdiaye/Gap_Safe_Rules).
 We extend its usage to multi-task group lasso, sparse multi-task group lasso in logistic loss problems.
 
 
 ---
 
 ## **Features**
-- Preprocess genotype datasets into a format suitable for SMuGLasso.
+- Preprocess genotype datasets into a format suitable for SMuGLasso using ```input_generator.py```.
 - Cluster SNPs into LD groups using R-based **adjclust** library.
-- Merge LD groups across populations using custom Python scripts.
-- Perform stability selection to evaluate feature importance using MuGLasso and SMuGLasso.
-
+- Merge LD groups across populations using ```merge_shared_groups.py```.
+- Perform stability selection on MuGLasso or/and SMuGLasso using ```multitask_stability_selection.py```.
+- Evaluate the stability of the selection using ```compute_stability_index.py```.
 ---
 
 ## **Installation**
 
 ### **1. Clone the Repository**
 ```bash
-git clone https://github.com/your-username/muglasso-stability.git
-cd muglasso-stability
+git clone https://github.com/asmanouira/SMuGLasso
+cd SMuGLasso
 ```
 ## **Usage**
 
 ### **Input Data**
 
 * Genotype data in `.raw` plink format with the first 6 columns for metadata and SNP columns for genotype values (0, 1, or 2).
-* Example data can be generated using the `generate_genotype_data.py` script.
+* Diverse GWAS data can be simulated using GWAsimulator by following the tutorial in the github repository: [GWAS-admixed-population-simulator](https://github.com/asmanouira/GWAS-admixed-population-simulator).
 
 ### **Running the Pipeline**
 
